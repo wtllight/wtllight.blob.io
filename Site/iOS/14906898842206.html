@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	第五章：委托协议，数据源协议与高级视图 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">第五章：委托协议，数据源协议与高级视图</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>协议</p>
+
+<pre><code>1. 高级视图的功能比较复杂，需要将某些复杂功能从视图本身剥离出来，由另外一些遵守该视图指定协议的类来完成。
+2. 简单一些的视图只指定了委托协议，如UITextField,UITextView,命名规则为&quot;视图名+Delegate&quot;
+3. 对于复杂的视图，我们同时指定委托协议与数据源协议，如UIPickerView，UICollectionView和UITableView，命名规则&quot;视图名+DataSource&quot;
+4. 委托协议和数据源协议是OSX 与iOS非常重要的设计模式。
+5. 委托对象负责对控件的外观与事件状态变化做出反应
+6. 数据源对象是控件与应用数据的桥梁
+7. 委托方法一般是可选择的，而数据源方法是必须实现的
+</code></pre></li>
+<li><p>选择器UIPickerView</p>
+
+<ol>
+<li>选择器是iOS中的标准控件，主要用于为用户提供选择，有输入的地方，就需要验证.</li>
+<li><p>日期选择器UIdatePicker</p>
+
+<pre><code>1. 有四种模式，日期，日期时间，时间，和倒计时定时器
+2. Mode: Date and Time,Time,Date,Count Down Timer
+3. Locate:本地化
+4. Interval:间隔时间，单位分钟
+5. Date:设定开始时间
+6. Constraints:约束，最大和最小日期
+7. Timer：倒计时模式下倒计时的秒数
+8.  NSDate *date = self.datePicker.date;
+     NSLog(@&quot;the date picked is :%@&quot;,[date descriptionWithLocale:[NSLocale currentLocale]]);
+     NSDateFormatter *formate = [[NSDateFormatter alloc]init];
+     [formate setDateFormat:@&quot;YYYY-MM-dd HH:mm:ss&quot;];
+     self.label.text = [formate stringFromDate:date];
+</code></pre></li>
+<li><p>普通选择器</p>
+
+<pre><code>#pragma mark picker datasource
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+return 3;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+if (component == 0) {
+return [self.pickerProvincesData count];
+}else
+return [self.pickerCitiesData count];
+}
+#pragma mark picker delegate
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+ if (component == 0) {
+ return [self.pickerProvincesData objectAtIndex:row];
+  }else
+       return [self.pickerCitiesData objectAtIndex:row];
+ }
+ -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+ {
+  NSLog(@&quot;Selected:Row:%lu,Component:%lu&quot;,row,component);
+  if (component==0) {
+  self.pickerCitiesData = [self.pickerData  objectForKey:[self.pickerProvincesData objectAtIndex:row]];
+  [self.pickerView reloadComponent:1];
+  [self.pickerView reloadComponent:2];
+  }
+  }
+</code></pre></li>
+<li><p>集合视图 UICollectionView</p>
+
+<ol>
+<li>为了增强网格视图开发，iOS开放了集合石图UICollection API</li>
+<li><p>集视图的组成</p>
+
+<pre><code>1. 单元格      =&gt; Cell 自定义
+2. 节    (Section) =&gt; equal to Row
+3. 补充视图
+4. 装饰视图
+5. NSIndexPath =&gt;have 2 attributes, row and section
+</code></pre></li>
+<li><p>UICollectionView</p>
+
+<pre><code>1. UICollectionView继承自UIScrollView
+2. 两个协议UICollectionViewDelegate（委托协议）与UICollectionViewDataSource（数据源协议）
+3. 视图包括单元格UICollectionViewCell
+4. 布局为UICollectionViewLayout，为抽象类，子类UICollectionViewFlowLayout
+5. 对应的控制器为UICollectionViewController
+</code></pre></li>
+<li><p>CollectionView Code</p>
+
+<pre><code>1. UICollectionView  object 拖拽到视图，并设置代理
+2. 自定义UICollectionViewCell，并应用到UICollectionView
+3. 视图中，布置Cell的内容与大小
+4. 实现UICollectionViewDelegate与UICollectionViewDataSource，并显示内容
+5. 
+</code></pre></li>
+</ol></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	面向对象 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">面向对象</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>OC为动态语言</p>
+
+<blockquote>
+<ol>
+<li>OC具有动态类型和动态绑定特性</li>
+<li>OC 的动态类型是指，程式直到执行时才确定对象所属类</li>
+<li>OC动态绑定，程式直到运行时才确定调用对象的实际方法</li>
+<li>多态，不同对象以自己的方式相应相同消息的能力</li>
+</ol>
+</blockquote></li>
+<li><p>向Nil发送消息</p>
+
+<blockquote>
+<ol>
+<li>向nil发送消息是完全有效的，只是运行时不会有任何的作用</li>
+<li>如果一个方法返回值是对象，那么返回的是0（nil）</li>
+<li>如果方法的返回值为指针类型，那么将返回0</li>
+<li>如果方法的返回值为结构体，那么结构体的各个字段将都是0</li>
+<li>其他类型将是未定义的</li>
+<li>objc 发送消息时，runtime会根据isa指针找到该对象实际所属的类，然后在该类的方法及父类的方法列表中寻找方法运行。</li>
+</ol>
+</blockquote></li>
+<li><p>[obj fool]与objc_msgSend()</p>
+
+<blockquote>
+<ol>
+<li> [obj foo]方法编译之后就是objc_msgSend（obj,fool）函数调用</li>
+</ol>
+</blockquote></li>
+<li><p>函数调用与发送消息</p>
+
+<blockquote>
+<ol>
+<li>在Java中，类和方法在编译期就绑定在一起</li>
+<li>在OC中，方法调用是向类发送消息,objc_msgSend(),向对象消息发送时会根据isa指针找到类，再根据类的调度表查找方法，如果没有找到则返回nil。</li>
+<li>NSString *obj = [NSData alloc] init]；编译时是NSString对象，运行时是NSData类型对象。</li>
+<li>isMemberOfClass ,是否是一个类的成员</li>
+<li>isKindofClass , 同样检测一个对象是否派生自该类的类的成员</li>
+<li>一个objc 对象的isa指针指向类对象，从而可以找到对象上的方法。</li>
+</ol>
+</blockquote></li>
+<li><p><code>Unrecognized selector</code>异常</p>
+
+<blockquote>
+<ol>
+<li>如果该类与父类并没有该方法，却调用了该方法，则会crash并报异常</li>
+<li>objc 会给出三次拯救机会</li>
+<li>Method resolution</li>
+</ol>
+</blockquote>
+
+<pre><code>    . resolveInstanceMethod
+    . resolveClassMethod
+    . MessageForwarding
+</code></pre>
+
+<blockquote>
+<ol>
+<li>Fast forwording</li>
+</ol>
+</blockquote>
+
+<pre><code>    . forwordingTargetForSelector,转发给其他对象,该方法不能反悔nil/self
+</code></pre>
+
+<blockquote>
+<ol>
+<li>Normal forwording</li>
+</ol>
+</blockquote>
+
+<pre><code>    .methodSignatureforSelector
+    .Runtime 就会创建一个NSInvocation对象，并发送forwordInvocation
+</code></pre></li>
+<li><p>类方法与实例方法</p>
+
+<blockquote>
+<p>A. 类方法</p>
+</blockquote>
+
+<pre><code>1. 类方法是属于类对象的,只能通过类对象调用
+2. 类方法中的self是类对象
+3. 类方法只能访问类方法，不能直接访问对象方法，而且不能访问成员变量
+</code></pre>
+
+<blockquote>
+<p>B. 实例方法</p>
+</blockquote>
+
+<pre><code>1. 实例方法是属于实例对象的,只能通过实例对象调用
+2. 实例方法中的self是实例对象
+3. 实例对象可以访问类方法(直接使用类名)，可以直接访问实例方法，可以访问成员变量
+</code></pre></li>
+<li><p>objc_msgForward</p>
+
+<ol>
+<li><code>objc_msgForward</code>是IMP类型，用于消息转发，但是他没有实现的时候</li>
+<li>直接调用objc_msgForward是非常危险的，有造成程式crash的风险</li>
+<li>一旦调用objc<u>msgForward，将跳过查找IMP的过程，直接触发消息转发，即使对象已经实现该方法，你也会告诉objc</u>msgSend,我没有在对象中找到该方法的实现。</li>
+</ol></li>
+<li><p>编译类与运行类</p>
+
+<blockquote>
+<ol>
+<li>不能向编译后得到的类中增加实例变量</li>
+<li>能向运行时创建的类中添加实例变量</li>
+<li>编译后的类已经注册在runtime中了，类结构中的objc<u>ivar</u>list实例变量的链表和instance_size实例变量的内存大小已经确定，</li>
+<li>runtime会调用class<u>setIvarLayout或class</u>setWeakIvarLayout来处理strong，weak引用。</li>
+<li>可以向运行时创建的类添加实例变量，调用class_assIva函数</li>
+<li>但是需要在objc<u>allocateClassPair之后，objc</u>registerClassPair之前</li>
+</ol>
+</blockquote></li>
+<li><p>C与OBJC的混用</p>
+
+<blockquote>
+<ol>
+<li>处理后缀为.m文件时，可以objc与C代码混用</li>
+<li>处理后缀为.mm文件时，可以识别obj-c,c,c++代码。</li>
+<li>处理后缀为.cpp文件，必须使用c/c++</li>
+<li>cpp文件的include头文件中，也不能出现objc代码</li>
+</ol>
+</blockquote></li>
+<li><p>Meta     Class</p>
+
+<blockquote>
+<ol>
+<li>类的实例对象的isa指向该类，类的类对象的isa 指向该类的meta Class</li>
+<li>实例对象的方法，保存在类的方法列表中，类对象的方法保存在meta Class的方法列表中</li>
+</ol>
+</blockquote></li>
+<li><p>Toll-Free Bridging</p>
+
+<blockquote>
+<ol>
+<li>Toll-Free Bridging用于在Foundation与Core Foundation对象交换数据</li>
+<li>在ARC 环境下，Foundation对象转换Core Foundation对象</li>
+</ol>
+</blockquote>
+
+<pre><code>    1. 使用__bridge桥接以后ARC会自动管理两个对象
+    2. 使用__bridge_retained桥接需要手动释放Core Foundation对象
+</code></pre>
+
+<blockquote>
+<ol>
+<li>在ARC环境下，Core Foundation 转换成Foundation对象</li>
+</ol>
+</blockquote>
+
+<pre><code>    1. 使用__bridge连接，如果Core Foundation被释放，Foundation 对象也不能用了
+    2. 使用 __bridge_transfer桥接，系统会自动管理两个对象
+</code></pre></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	第八章 视图控制器与导航模式 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">第八章 视图控制器与导航模式</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>概述</p>
+
+<ol>
+<li><p>视图控制器种类</p>
+
+<pre><code>1. UIViewController ，自定义视图控制器
+2. UINavigationController，导航与UITableViewController结合使用
+3. UITabBarController，树标签导航
+4. UIPageViewController，电子书导航风格
+5. UISplitViewController，iPad设计，屏幕分为几块
+6. UIPopoverController，iPad，气泡风格视图控制器
+</code></pre></li>
+<li><p>导航模式</p>
+
+<pre><code>1. 平铺导航模式，内容都放在主屏幕上，通过左右上下来查看，采用分屏或分页控制器，天气
+2. 标签导航模式，内容分为几个模块，通过标签控制器来管理模块显示与切换，闹钟
+3. 树形结构导航模式，内容是有层次的，表视图控制器，邮件
+</code></pre></li>
+</ol></li>
+<li><p>模态视图“presentViewController”</p>
+
+<ul>
+<li><p>简介</p>
+
+<pre><code>    1. 模态视图从屏幕下方弹出，且完成后关闭，并返回。
+    2. 模态视图用于处理次级任务，具有必须响应处理的意思
+    3. 主视图控制器与模态视图控制器是&quot;父子&quot;的关系
+    4. 实现方式有两种，1代码实现，2 IB的segue实现
+</code></pre></li>
+<li><p>IB 实现Segue</p>
+
+<pre><code>    1. Embeded In Navigation Controller
+    2. 拖拽事件到 Navigation Controller
+    3. 选择Present Modally
+</code></pre></li>
+<li><p>Code 实现</p>
+
+<pre><code>    1. 创建NavigationController，并设置RootViewController
+    2. 展现视图“[self presentViewController:navigationController animated:TRUE completion:^”
+</code></pre></li>
+<li><p>视图返回</p>
+
+<pre><code>    [self dismissViewControllerAnimated:YES completion:^{
+</code></pre></li>
+<li><p>注意要点</p>
+
+<pre><code>    1. 展示视图，不仅适用于NavigationController，而且适用于一般的ViewController
+    2. 如果一个ViewController已经作为一个NAvigationController的rootViewController，则不可展示，因为该ViewController已经处于Active状态
+</code></pre></li>
+</ul></li>
+<li><p>平铺导航</p>
+
+<ol>
+<li><p>应用场景</p>
+
+<pre><code>1. 用于简单的平铺化信息浏览，信息没有层次关系，没有从属关系
+2. 天气，电子书
+</code></pre></li>
+<li><p>基于分屏导航   PageControlNavigation</p>
+
+<pre><code>1. 分屏控件 UIPageControl
+2. 屏幕滚动视图 UIScrollView
+3. 屏幕应该小于20
+4. 图片控件，UIImageView
+5. ScrollView的contentSize与contentOffset
+6. ScrollView的代理方法，“scrollViewDidScroll”
+7. PageControl的value change事件“changePage”
+8.  [UIView animateWithDuration:0.3f animations:^{
+NSInteger whichPage = self.pageControl.currentPage;
+self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*whichPage, 0);
+NSLog(@&quot;the action is doing&quot;);
+}];
+</code></pre></li>
+<li><p>基于电子书导航</p>
+
+<ol>
+<li><p>UIPageViewController</p>
+
+<pre><code>1. 需要实现UIPageViewControllerDataSource与UIPageViewControllerDelegate
+2. UIPageViewController没有对应的视图类
+3. pageViewController:viewControllerBeforeViewController
+4. pageViewController:viewControllerAfterViewController
+5. pageViewController:spineLocationForInterfaceOrientation
+6. Attribute: doubleSided,Spine Location(Min,Max,Mid)
+7. pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:
+</code></pre></li>
+<li><p>PageNavigation</p>
+
+<ol>
+<li>定义enum类型与int directionFoward用于记录翻页方向，前翻与后翻</li>
+<li>定义int 类型 pageIndex用于记录</li>
+<li>声明两个变量，PageViewController与NSArray(viewControllers)</li>
+<li>PageViewController实例化，设置代理，设置首页，并加入到View中</li>
+<li><p>两个DataSource与两个Delegate方法的实现</p>
+
+<pre><code>“-(void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray&lt;UIViewController *&gt; *)previousViewControllers transitionCompleted:(BOOL)completed” 
+</code></pre></li>
+</ol></li>
+</ol></li>
+</ol></li>
+<li><p>Tab标签导航</p>
+
+<ol>
+<li><p>使用场景</p>
+
+<pre><code>    1. 标签栏位于屏幕下方，占49点屏幕空间，可以隐藏
+    2. 一般标签栏中标签不超过5个，超过则为&quot;更多&quot;
+    3. 小组内部的数据有一定的关联关系，是用标签导航
+    4. 每个标签代表一个功能模块，各个模块之间相互独立
+</code></pre></li>
+<li><p>实例：TabNavigation</p>
+
+<pre><code>    1. 创建TabViewController
+    2. 创建其他的几个ViewController
+    3. Control Tab拖拽segue到ViewController选择viewControllers
+</code></pre></li>
+<li><p>代码实现 AppDelegate</p>
+
+<pre><code>    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UITabBarController *tabBarController= [[UITabBarController alloc]init];
+    self.window.rootViewController = tabBarController;
+    HeiViewController *heiController = [[HeiViewController alloc]initWithNibName:nil bundle:nil];
+    JiViewController *jiController = [[JiViewController alloc]initWithNibName:nil bundle:nil];
+    LiaoViewController *liaoController = [[LiaoViewController alloc ]initWithNibName:nil bundle:nil];
+    tabBarController.viewControllers = @[heiController,jiController,liaoController];
+     return YES;
+     }
+</code></pre></li>
+</ol></li>
+<li><p>树形结构导航</p>
+
+<ol>
+<li><p>应用场景“从属”</p>
+
+<pre><code>1. 树形结构导航模式主要构建有&quot;从属关系&quot;的导航
+2. 这种导航采用分层组织信息的方式，组建iOS效率型应用程序。
+3. 效率性应用程序具有组织和操作具体信息的功能，通常用于完成比较重要的任务，通常分层组织信息，相册是典型的例子
+4. 第一个界面是根视图，第二个界面是二级视图，第三个界面是三级视图
+5. 一级视图的导航栏可以添加左右按钮，二级视图或更高级视图的左按钮是导航控制器自己添加的
+</code></pre></li>
+<li><p>实例TreeNavigation</p>
+
+<pre><code>1. 删除ViewController，添加Navigation Controller，并设置attribute inspector，is InitialViewController
+2. 导航控制器的根视图视图控制器为UITableViewController
+3. 树形结构导航的window根视图导航器是导航控制器UINavigationController
+4. storyBoard专用的Navigation-&gt;prepareForSegue:sender:
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+if ([segue.identifier isEqualToString:@&quot;ShowSelectedProvince&quot;]) {
+NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+CitiesTableViewController *citiesViewController = segue.destinationViewController;
+NSString *selectName = [self.listArray objectAtIndex:indexPath.row];
+citiesViewController.listData = [self.dictData objectForKey:selectName];
+citiesViewController.title = selectName;
+}
+}
+5. 除了segue，还可以使用navigationController的Push与Pop方法
+[self.navigationController pushViewController:detailViewController animated:YES];
+6. NavigationController 将要管理的视图控制器放入他的栈中，处于栈顶的视图控制器负责显示当前的视图，如果要显示下一级视图就需要将下一级视图控制器压栈Push，要返回上级视图控制器，就要使用出栈方法Pop
+7. popToViewController:animated:
+8. popToRootViewControllerAnimated
+9. popViewControllerAnimated
+10. pushViewController:animated:
+</code></pre></li>
+</ol></li>
+<li><p>组合使用导航模式</p>
+
+<ol>
+<li><p>应用场景</p>
+
+<pre><code>1. 标签导航用于省间信息切换
+2. 树形结构用于省内信息显示
+3. 二级视图的右边按钮可以添加城市信息
+</code></pre></li>
+<li><p>实例 CombNavigation</p>
+
+<ol>
+<li><p>标签控制器</p>
+
+<pre><code>1. 创建Single View Application
+2. Main Story删除ViewController
+3. 添加TabViewController
+4. 删除Item1 与Item2
+5. TabViewController设置属性Inspector为Initial View Controller
+</code></pre></li>
+<li><p>一级视图控制器</p>
+
+<pre><code>1. 添加Navigation Controller到Story界面
+2. 按住Control键，TabViewController中拖拽鼠标到Navigation
+3. 选择Segue中Relationship Segue中的view controllers
+</code></pre></li>
+<li><p>二级视图</p>
+
+<pre><code>1. 添加ViewController到StoryBoard
+2. 按住Control键，RootViewController中Cell拖拽鼠标到ViewController
+3. 选择Segue中Selection Segue中的Show
+4. 选中Segue,打开属性Inspector，Identifier 填写ShowDetail
+5. 添加Navigation Item到ViewController，
+6. 设置Navigation Item的Title为“Detail View Controller”
+6. 添加Button Item到Navigation Item
+7. 设置Button Item的System Item为Add
+</code></pre></li>
+<li><p>模态视图控制器</p>
+
+<pre><code>1. 添加ViewController 
+2. Editor,Emdebbed Navigation  to ViewController
+3. 按住Control键，鼠标拖拽二级视图Add到Navigation Controller
+4. 在弹出的对话框中选择，Present Modally
+5. 设置Navigation Item的Title为Modal View
+6. 添加Button item “Cancel”“Save”到Navigation Item
+7. 添加TextView到ViewController
+</code></pre></li>
+<li><p>设置标签栏的内容</p>
+
+<pre><code>1. 按住Control键，从TabViewController拖拽到NavigationController
+2. 选择segue，controllers
+3. 点击Navigation的Tab标签，设置Inspector的Title与image
+</code></pre></li>
+<li><p>代码添加</p>
+
+<pre><code>1. 需要三个视图控制器文件，ViewController，DetailViewController与ModalViewController
+2. ViewController父类TableViewController
+3. Detail与Modal的父类为ViewController
+4. TableViewController的ParentViewController为NavigationController
+5. add Content and navigation
+6. presentViewController
+7. dismissViewControllerAnimated
+8. prepareForSegue
+</code></pre></li>
+<li><p>代码实现</p>
+
+<ol>
+<li><p>AppDelegate 初始化Window与TabController</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+// Override point for customization after application launch.
+self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+[self.window makeKeyAndVisible];
+
+UITabBarController *tabController = [[UITabBarController alloc]init];
+self.window.rootViewController = tabController;
+
+ViewController *viewController1 = [[ViewController alloc]init];
+UINavigationController *navigationController1 = [[UINavigationController alloc]initWithRootViewController:viewController1];
+navigationController1.tabBarItem.title = @&quot;黑龙江省&quot;;
+navigationController1.tabBarItem.image = [UIImage imageNamed:@&quot;Hei&quot;]；
+tabController.viewControllers = [NSArray arrayWithObjects:navigationController1,navigationController2,navigationController3, nil];
+return YES;
+} 
+</code></pre></li>
+<li><p>一级视图ViewController实现select跳转</p>
+
+<pre><code>-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+DetailViewController * detailController = [[DetailViewController alloc]init];
+NSUInteger selectedRow = indexPath.row;
+detailController.url = [[self.listArray objectAtIndex:selectedRow] objectForKey:@&quot;url&quot;];
+detailController.title = [[self.listArray objectAtIndex:selectedRow] objectForKey:@&quot;name&quot;];
+[self.navigationController pushViewController:detailController animated:YES];
+NSLog(@&quot;the url is %@&quot;,detailController.url);
+}
+</code></pre></li>
+<li><p>DetailController界面布局添加</p>
+
+<pre><code>- (void)viewDidLoad {
+[super viewDidLoad];
+UIBarButtonItem *barButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(add:)];
+self.navigationItem.rightBarButtonItem = barButton;
+
+self.webView = [[WKWebView alloc]initWithFrame:[self.view bounds]];
+[self.view addSubview:self.webView];
+self.webView.navigationDelegate = self;
+NSURL *url = [NSURL URLWithString:self.url];
+NSURLRequest * request = [NSURLRequest requestWithURL:url];
+[self.webView loadRequest:request];
+}
+
+-(void)add:(id)sender
+{
+ModalViewController *modalController = [[ModalViewController alloc]init];
+UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:modalController];
+[self presentViewController:navigationController animated:YES completion:^{
+NSLog(@&quot;The modal View Controller is present&quot;);
+}];
+}
+</code></pre></li>
+<li><p>ModalController布局</p>
+
+<pre><code>- (void)viewDidLoad {
+[super viewDidLoad];
+UIBarButtonItem* cancelItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(clickCancel:)];
+UIBarButtonItem* saveItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:nil];
+self.navigationItem.leftBarButtonItem = cancelItem;
+self.navigationItem.rightBarButtonItem = saveItem;UITextView 
+*textView = [[UITextView alloc]initWithFrame:[self.view bounds]];
+textView.text = @&quot;This is the madal View Content&quot;;
+[self.view addSubview:textView];
+}
+-(void)clickCancel:(id)sender
+{
+[self dismissViewControllerAnimated:YES completion:^{
+NSLog(@&quot; cancel the modal View, go to back View&quot;);
+}];
+}
+</code></pre></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

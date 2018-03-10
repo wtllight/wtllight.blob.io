@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	第七章 界面布局与屏幕适配 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">第七章 界面布局与屏幕适配</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>界面布局概述</p>
+
+<pre><code>1. 为了适配多种IOS 设备屏幕，iOS8推出了 Auto Layout的Size Class技术
+2. 不应该只是简单的iPhone界面放大，而是需要重新布局
+3. 屏幕布局中有，状态栏，标签栏，导航栏，工具栏以及内容视图部分
+4. UIStatusBar          height 20
+5. UINavigationBar  height 44
+6. UIView
+7. UITabBar             height 49
+</code></pre></li>
+<li><p>界面布局设计模式</p>
+
+<ol>
+<li><p>表单布局模式</p>
+
+<pre><code>1. 表单布局，例如登陆界面与注册界面可以采用静态表视图实现
+</code></pre></li>
+<li><p>列表布局模式</p>
+
+<pre><code>1. 需要展示大量数据时，列表布局使用动态表视图
+2. 需要实现delegate与datasource相关方法
+</code></pre></li>
+<li><p>网格布局模式</p>
+
+<pre><code>1. 可以实现多列，使用集合视图实现
+</code></pre></li>
+<li><p>堆视图 StackView</p>
+
+<pre><code>1. 可以实现管理垂直方向与水平方向排列的布局
+</code></pre></li>
+</ol></li>
+<li><p>传统布局技术</p>
+
+<pre><code>1. MainStoryBoard，File Inspector, 取消 Use Auto Layout 和 Use Size Classes
+2. Button ，Size Inspector， View Autoresizing,虚线 相对距离，实线 绝对距离
+3. 屏幕旋转   Command + 左右箭头
+4. 传统布局，只能设置，上下左右边距，不能设置屏幕中视图之间的距离
+</code></pre></li>
+<li><p>Auto Layout 布局技术</p>
+
+<ol>
+<li><p>Auto Layout</p>
+
+<pre><code>1. 为空间布局定义了一套约束(constraint),定义了视图之间的关系
+2. AutoLayout 可以通过IB 或代码实现
+3. 通过代码构建界面，不推荐使用Auto Layout，而是自己根据屏幕大小动态计算视图位置
+</code></pre></li>
+<li><p>IB 管理Auto Layout</p>
+
+<pre><code>1. IB 针对Auto Layout提供了一些操作按钮
+2. Stack  ，将视图对象添加到堆视图StackView中
+3. Align    ， 创建对齐约束，如使视图在容器中
+4. Pin  ，创建距离和位置的相关约束，如高度，相对其他试图的距离
+5. 解决布局问题 ，解决布局中的问题
+</code></pre></li>
+<li><p>实例 AutoLayoutSAmple</p>
+
+<pre><code>1. 水平居中，Align ， Horizontally in Container，Add Constraint
+2. 上边距，下边距，左右边距绝对约束，Pin ， 点击上边虚线，变为实线，Add Constraint
+3. 两个控件对齐操作，Shift 选中两个， Aligh， Top Edges，Add Constraint
+4. 属性检测器，Attribute Inspector 的约束查看与编辑
+</code></pre></li>
+</ol></li>
+<li><p>Stack View</p>
+
+<ol>
+<li><p>StackView 与布局</p>
+
+<pre><code>1. 堆视图是iOS9中一种新的容器视图，类为UIStackView
+2. Container 视图都可以用于界面布局
+3. Stack View可以使构建复杂界面布局变得简单
+4. Stack View可以管理两个方向的界面布局
+5. Stack View还可以实现视图的嵌套
+</code></pre></li>
+<li><p>实例StackViewSample</p>
+
+<pre><code>1. In UIView , add vertical stack
+2. in Vertical Stack ,add Horizontal stack
+3. in Vertical Stack ,add button1 upper Horizontal 
+4. in Horizontal Stack , add button2 button3
+5. Setting  Stack Attribute: Spacing -Between View
+6. Add Constraints to the Stack View
+</code></pre></li>
+</ol></li>
+<li><p>iOS 屏幕多样性</p>
+
+<ol>
+<li><p>iOS 屏幕</p>
+
+<pre><code>1. iPhone6/6s Plus  5.5  1920*1080   Retina HD
+2. iPhone6/6s       4.7  1334*750    Retina HD
+3. iPhone5/5s/5c        4    1136*640    Retina
+4. iphone4s             3.5  960*640     Retina
+5. iPad Pro             12.9 2732*2048   Retina
+6. iPad Air             9.7  2048*1536   Retina
+7. iPad Mini            7.9  2048*1536   Retina
+</code></pre></li>
+<li><p>iOS 三种分辨率</p>
+
+<pre><code>1. 资源分辨率 ， 资源图片大小，单位像素
+2. 设计分辨率 ， 逻辑上的屏幕大小，单位点
+3. 屏幕分辨率     ， 以像素为单位的屏幕大小
+</code></pre></li>
+<li><p>获取iOS 设备屏幕信息</p>
+
+<pre><code>1. [UIDevice currentDevice].userInterfaceIdiom
+2. CGSize iOSDeviceScreenSize = [UIScreen mainScreen].bounds.size       
+</code></pre></li>
+</ol></li>
+<li><p>Size Class 与iOS 多屏幕适配</p>
+
+<ol>
+<li><p>简介</p>
+
+<pre><code>1. AutoLayout 技术解决界面差距小的情况
+2. Size Class 为新的屏幕适配技术，建立在AutoLayout 之上
+3. Size Class 不能通过Code 进行管理，只能通过IB使用
+</code></pre></li>
+<li><p>IB 中使用Size Class</p>
+
+<pre><code>1.  可以在IB 中File Inspector配置使用Auto Layout与Size Class
+2. Size Class的面板在&quot;wAny hAny&quot;点击后呈现
+3. Size Class面板是一个九宫格
+</code></pre></li>
+<li><p>Size Class 九宫格</p>
+
+<pre><code>1. Size Class 九宫格有9种不同的布局
+2. Width 与Height 两个布局方向，三个类别，Compact，Any，Regular
+3. 坐标原点左上角  
+4. wCompact , hCompact
+5. wAny , hCompact
+6. wRegular , hCompact
+7. wCompact , hAny
+8. wAny , hAny
+9. wRegular , hAny
+10. wCompact , hRegular
+11. wAny , hRegular
+12. wRegualar , hRegular
+</code></pre></li>
+<li><p>实例，SizeClassSample</p>
+
+<pre><code>1. iPhone 竖屏 wCompact , hRegular
+2. 添加AutoLayout
+3. 打开辅助编辑器Assistant Editor，Preview-&gt;Main.storyBoard
+4. 左下角+添加新的设备，也可以删除设备&quot;Delete&quot;键，也可以旋转横屏
+5. 有问题会出现，红色或黄色图标，可以弹出问题对话框
+
+    &gt;1. Update Frame
+    &gt;2. Update Constraints
+    &gt;3. Reset to Suggested Constraints
+    &gt;4. Apply to all views in container
+    &gt;   Fix Misplacement
+6. 布局问题解决:Resolve Auto Layout issues-&gt;Constraints
+</code></pre></li>
+</ol></li>
+<li><p>资源目录与图片资源适配</p>
+
+<ol>
+<li><p>Assets.xcassets</p>
+
+<pre><code>1. 默认项目,AppIcon应用图标
+2. add + New Image Set &quot;background&quot;
+3. drag UIImageView, set attribute &quot;image&quot; to &quot;background&quot;
+</code></pre></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

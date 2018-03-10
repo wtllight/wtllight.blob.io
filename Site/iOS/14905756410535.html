@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	第四章 UIView与视图 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">第四章 UIView与视图</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>标签(Label)与按钮(Button)</p>
+
+<ol>
+<li>视图与控件是iOS应用的基本元素</li>
+<li><p>LabelButton工程的创建</p>
+
+<pre><code>1. Label的加入，在右边栏使用属性检查器，查看属性
+2. 对象库(Object Library)中搜索控件，
+3. Label -&gt; Label,View
+4. Button -&gt; Button, Control , View
+5. UIKit中至少两种按钮,UIButton与UIBarButtonItem(Not SubClass From NSView)
+6. 按钮事件处理，Interface Builder实现按钮与方法之间的连线
+7. 辅助编辑器，选中Button，同时按住&quot;Control&quot;,鼠标拖拽到辅助编辑器，注意各个参数
+8. 代码实现事件，`[self.button addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];`
+包括，事件处理者，事件处理方法，事件类型
+9. 代码中，事件处理方法的返回类型不必为IBAction，也可以为void
+10. action可以有多重形式，每一个冒号后面都有一个参数
+</code></pre></li>
+</ol></li>
+<li><p>访问视图</p>
+
+<pre><code>    1. 关键字&quot;Outlet&quot;来修饰属性（称为输出口属性），用于关联视图与属性
+    2. 在storyBoard或Xib中创建视图，所有权是Interface Builder，它们对视图对象是强引用的。由于所有权不属于Controller因此在Controller中使用时不能定义为strong
+    3. 如果代码生成视图，则属性所有权属于Controller，需要定义为strong。否则定义为weak内存会立刻释放
+</code></pre></li>
+<li><p>TextField与TextView</p>
+
+<pre><code>    1. Label，TextField与TextView都属于文本视图，内容编辑都可以通过代码，双击控件，属性检查器中text属性来实现。
+    2. TextField与TextView比Label多了一个键盘的设置，还有一个委托协议，“textFieldShouldReturn:”，“textView:shouldChangeTextInRange:replacementText:”
+    3. Delegate代理可以通过IB，将TextField与TextView的属性Delegate与Controller 相连，实现对象的委托
+    4. Delegate也可以通过&quot;code，self.field.delegate = self; self.viewText.delegate = self;&quot;来实现
+</code></pre></li>
+<li><p>键盘的打开与关闭</p>
+
+<ol>
+<li>键盘的打开，一旦处于编辑状态，系统智能弹出键盘</li>
+<li>键盘的关闭，需要放弃第一响应者的身份，需要调用UIResponder的resignFirstResponder，可以在delegate方法中实现：如<q>[textView resignFirstResponder];</q></li>
+<li><p>键盘通知</p>
+
+<pre><code>1. 关闭键盘&quot;UIKeyboardDidHideNotification&quot;
+2. 打开键盘&quot;UIKeyboardDidShowNotification&quot;
+3. 注册: -(void)viewWillAppear:(BOOL)animated{
+NSLog(@&quot;Hello this is :View Will Appear&quot;);
+[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
+4. 注销:-(void)viewWillDisappear:(BOOL)animated{
+ [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+ [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+ NSLog(@&quot;Hello this is :View Will DisAppear&quot;)
+ }
+ 5. 键盘的类型，属性检测器中&quot;Keyboard Type&quot;修改
+ 6. return key的文本设置，属性检测器中&quot;Keyboard Type&quot;修改
+ 7. 与视图的其他属性一样，这些同样可以使用代码设置
+</code></pre></li>
+</ol></li>
+<li><p>开关控件，分段控件，滑块控件</p>
+
+<ol>
+<li>UISwitch,UISegmentedControl,UISlider都是UIControl的子类</li>
+<li><p>UISwitch,link it to <q>switchValueChanged</q></p>
+
+<pre><code>-(IBAction)switchValueChanged:(id)sender {
+UISwitch *switchBoth = (UISwitch*)sender;
+[self.leftSwitch setOn:switchBoth.isOn animated:TRUE];
+[self.rightSwitch setOn:switchBoth.isOn animated:TRUE];
+}
+</code></pre></li>
+<li><p>UISegmentedControl类似于Windows中的单选按钮 </p>
+
+<pre><code>1. the segment can set to more the 2 segments
+2. - (IBAction)touchDown:(id)sender {
+UISegmentedControl *segment = (UISegmentedControl*)sender；
+[self.leftSwitch setHidden:FALSE];
+[self.rightSwitch setHidden:FALSE];
+if (segment.selectedSegmentIndex == 0) {
+[self.leftSwitch setOn:TRUE animated:TRUE];
+[self.rightSwitch setOn:TRUE animated:TRUE];
+}else if(segment.selectedSegmentIndex == 1){
+[self.leftSwitch setOn:FALSE animated:TRUE];
+[self.rightSwitch setOn:FALSE animated:TRUE];
+}else{
+[self.leftSwitch setHidden:TRUE];
+[self.rightSwitch setHidden:TRUE];}
+}
+</code></pre></li>
+<li><p>UISlider</p>
+
+<pre><code>1. 属性检测器设置Minimum,Maximum,Current
+2. - (IBAction)sliderValueChange:(id)sender {
+UISlider *slider = (UISlider*)sender;
+self.sliderLabel.text = [NSString stringWithFormat:@&quot;Slider Value is : %.2f&quot;,slider.value];
+}
+</code></pre></li>
+</ol></li>
+<li><p>Web 视图<q>WKWebView</q></p>
+
+<ol>
+<li><p>Web 技术构建界面有很大优势</p>
+
+<pre><code>1. 丰富的界面布局
+2. 显示多行不同风格文本
+3. 显示图片，播放音频/视频等
+4. 显示HTML
+5. 解析CSS
+6. 执行JavaScript
+7. MKWebView，可以加载本地HTML和网络资源
+</code></pre></li>
+<li><p>MKWebView</p>
+
+<pre><code>1. 加载本地HTML，一般采用同步方式&quot;loadHTMLString&quot;,&quot;loadData&quot;
+2. 加载网络资源一般采用异步方式,&quot;loadRequest&quot;
+3. object Library库中没有该控件，所以需要使用代码生成
+     self.webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 60, screen.size.width, screen.size.height-80)];
+     [self.view addSubview:self.webView];
+4. navigationDelegate, didStartProvisionalNavigation, didCommitNavigation, didFinishNavigation, didFailProvisionalNavigation
+5. Info file add dic(App Transport Security settings,Allow Arbitrary Loads)
+</code></pre></li>
+</ol></li>
+<li><p>警告框与操作表</p>
+
+<pre><code>1. AlertView and ActionSheet
+2. UIAlertController 实现警告框与操作表
+
+        1. 警告框是模态的，因此不能随意使用，使用情况如下
+        2. 应用不能继续运行
+        3. 询问另外的解决方案
+        4. 询问对操作的授权
+        5. 警告框的按钮不应多于两个，否则为操作表
+        6. IOS 8 之前使用UIAlertView，之后使用UIAlertController
+        7. 控件库中没有可拖拽对象，因此需要code实现
+        8. 区别两者为alert的type：UIAlertControllerStyleActionSheet， UIAlertControllerStyleAlert
+3. AlertViewActionSheet
+
+            UIButton *btn = (UIButton*)sender;
+            NSLog(@&quot;the button item: %@&quot;,btn.currentTitle );
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@&quot;AlertMessage&quot; message:@&quot;Alert test goes here!&quot; preferredStyle:UIAlertControllerStyleActionSheet];
+            UIAlertAction *noAction = [UIAlertAction actionWithTitle:@&quot;NO&quot; style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+            NSLog(@&quot;Tap NO Button: %@&quot;,action.title);
+            }];
+            UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@&quot;YES&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            NSLog(@&quot;Tap YES Button:%@&quot;,action.title);
+            }];
+            UIAlertAction *destructionAction = [UIAlertAction actionWithTitle:@&quot;Destruction&quot; style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action){
+            NSLog(@&quot;Tap Destruction Button:%@&quot;,action.title);
+            }];
+            UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@&quot;DownLoad&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+            NSLog(@&quot;Tap Other Button:%@&quot;,action.title);
+            }];
+            [alertController addAction:noAction];[alertController addA
+            ction:yesAction];
+            [alertController addAction:destructionAction];
+            [alertController addAction:otherAction];
+            [self presentViewController:alertController animated:YES completion:^{
+            NSLog(@&quot;the alert is appear !&quot;);
+            }];
+</code></pre></li>
+<li><p>活动指示器 ActivityIndicatorView，UIProgressView</p>
+
+<ol>
+<li>可以直接拖拽控件</li>
+<li><p>UploadDownLoad</p>
+
+<ol>
+<li><p>UIActivityIndicatorView</p>
+
+<pre><code>if (self.activityIndicatorView.isAnimating) {
+[self.activityIndicatorView stopAnimating];
+}else
+[self.activityIndicatorView startAnimating];
+</code></pre></li>
+<li><p>UIProgressView</p>
+
+<pre><code>1. self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(downLoad) userInfo:nil repeats:YES];
+2. -(void)downLoad{
+self.progressView.progress = self.progressView.progress + 0.1;
+if (self.progressView.progress == 1) {
+[self.timer invalidate];
+UIAlertController *alert = [UIAlertController alertControllerWithTitle:@&quot;DownLoad Completed&quot; message:@&quot;successed&quot; preferredStyle:UIAlertControllerStyleAlert];
+UIAlertAction *action = [UIAlertAction actionWithTitle:@&quot;OK&quot; style:UIAlertActionStyleDefault handler:nil];
+[alert addAction:action];
+[self presentViewController:alert animated:YES completion:nil];             
+}
+}
+</code></pre></li>
+</ol></li>
+</ol></li>
+<li><p>工具栏与导航栏</p>
+
+<ol>
+<li>ToolBar与NavigationBar差别很大，但是有一个共性，可以放置UIBarButtonItem</li>
+<li>工具栏主要应用于当前界面，考虑的是局部界面</li>
+<li>导航栏主要应用于导航，考虑的是整个应用</li>
+<li><p>工具栏 UIToolBar</p>
+
+<pre><code>1. iphone工具栏位于屏幕底部，ipad位于顶部
+2. iphone 最多可以显示5个按钮
+3. 按钮之间有固定空格或可变空格可以选择
+4. 除了UIBarButtonItem，还可以放置其他自定义视图
+5. UIToolBar一定要有一个ButtonItem的itentifier属性设置为Save
+6. 两个Item之间需要添加可变空格，这样显示漂亮
+</code></pre></li>
+<li><p>导航栏 </p>
+
+<pre><code>1. UINavigationController, 构建树形导航模式应用的根控制器
+2. UINavigationBar，导航栏，与导航栏控制器是1对1的关系，可以包含多个导航栏项目。
+3. UINavigationItem，导航栏项目，左中右三个区域，左返回，右按钮，中间描述性标题，包含栏按钮项目
+4. UIBarButtonItem，导航栏项目中的左右按钮
+</code></pre></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

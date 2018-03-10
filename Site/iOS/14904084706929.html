@@ -1,0 +1,310 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	第三章Cocoa Touch - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">第三章Cocoa Touch</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>简介</p>
+
+<pre><code>1. 界面基本都是有Cocoa与Cocoa Touch框架中元素搭建
+2. 这些元素通过MVC框架(Model-View-Controller)组织起来的
+3. OSX的核心是Foundation与Application Kit
+4. iOS的核心是Foundation与UIKit
+5. MVC，中VC是UIKit中的UIView与UIController
+</code></pre></li>
+<li><p>UIViewControl 视图控制器</p>
+
+<ol>
+<li><p>Categary</p>
+
+<pre><code>1. UIViewController,导航作用，可以用于两个界面之间的跳转
+2. UINavigationController，与UITableViewController结合使用，构建树形结构导航模式
+3. UITabBarController，标签栏控制器
+4. UIPageViewController，电子书风格导航控制器
+5. UISplitViewController，屏幕分割几块，主要为iPad屏幕设计
+6. UIPopoverController，气泡风格视图控制器
+7. 作用，显示视图，界面跳转(导航)
+</code></pre></li>
+<li><p>视图生命周期</p>
+
+<ul>
+<li><p>视图有不同的状态，这就是生命周期。视图生命周期的不同阶段会回调视图控制器(viewController)的不同方法</p>
+
+<pre><code>1. 视图创建，调用viewDidLoad，only once
+2. 视图可见，调用viewWillAppear，viewDidAppear，more one
+3. 视图不可见，调用viewWillDisappear，viewDidDidappear，more
+4. 系统低内存，调用didReceiveMemoryWarning，release Memory
+</code></pre></li>
+</ul></li>
+<li><p>UIView</p>
+
+<ol>
+<li>UIView是所有视图的根类，<code>UIView:UIResponder:NSObject</code></li>
+<li><p>NSView的继承层次结构</p>
+
+<pre><code>1. UIWindow
+2. UILabel
+3. UITableViewCell
+4. UIScrollView     -&gt; UITableView,UITextView,UICollectionView
+5. UIPickerView
+6. UIProgressView
+7. UIActivityIndicatorView
+8. UIImageView
+9. UITabBar
+10. UIToolbar （Bottom/Upside）
+11. UIControl       -&gt; UIButton,UIDatePicker,UIPageControl,UISegmentedControl,UITextField,UISlider,UISwitch
+12. UINavigationBar
+13. UIActionSheet
+14. UIAlertView
+15. UIVebView
+</code></pre></li>
+<li><p>基本属性</p>
+
+<pre><code>1. frame,CGSize{CGFloat width; CGFloat height;};
+2. center,CGPoint{CGFloat x; CGFloar y;};
+3. bounds,CGRect{CGPoint origin; CGSize size;};
+</code></pre></li>
+<li><p>视图分类</p>
+
+<pre><code>1. 控件，继承自UIControl类,响应用户高级事件
+2. 窗口，UIWindow，only one，是所有视图的跟容器
+3. 容器视图，UIScrollView，UIToolbar
+4. 显示视图，UIImageView,UILabel,UIProgressView,UIActivityIndicatorView
+5. 文本和Web视图,UITextView，UIWebView
+6. 导航视图，UITabViewBar，UINavigationBar
+7. 警告框和操作表，pop up/Bottom up
+</code></pre></li>
+<li><p>界面构建层次</p>
+
+<pre><code>1. 应用界面的构建层次为，树形结构
+2. 树根(Window)，树干(RootView)与树冠(Other View objects)
+3. 视图的三个属性,superView,subViews,window
+4. Window(UIwindow)-&gt;RootView(UIView)-&gt;Button,Label,View
+</code></pre></li>
+<li><p>界面构建</p>
+
+<pre><code>* 三种方式,故事版文件storyboard，XIB文件，纯代码实现
+</code></pre></li>
+</ol></li>
+</ol></li>
+<li><p>故事版StoryBoard</p>
+
+<ol>
+<li>本质为一个xml文件，描述界面，界面中的视图，视图布局，事件处理，以及界面导航</li>
+<li>我们可以创建Master-Detail, Page-Based,Single View,Tabbed,Game等导航模式的应用</li>
+<li><p>storyBoard中的两个重要概念,Scene,Segue.</p>
+
+<pre><code>1. Scene包括ViewController，and View
+2. Scene的导航(Navigation)通过&quot;过渡&quot;(Segue)连接
+3. 导航模式与过渡类型紧密相关
+4. Show Segue，Show Detail Segue，Model Segue，Popover Segue
+</code></pre></li>
+<li><p>树形结构导航模式，模态导航模式</p></li>
+<li><p>story board</p>
+
+<pre><code>1. create a story board named &quot;SN&quot;
+2. drag a UIViewController to the board
+3. change UIViewController to initial view controller(Entry Point)
+4. target-&gt;General-&gt;deployment Info-&gt;Main Interface = &quot;SN&quot;
+</code></pre></li>
+</ol></li>
+<li><p>Xib 文件构建界面</p>
+
+<ol>
+<li>delete main.storyboard file 与Controller</li>
+<li>create a cocoa file with Xib，subClass from UIViewController</li>
+<li>set target-&gt;General-&gt;deployment Info -&gt;Main Interface = nil</li>
+<li><p>in delegate file ,change below code to load xib file</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[UIViewController alloc]initWithNibName:@&quot;RootViewController&quot; bundle:nil];
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+</code></pre></li>
+</ol></li>
+<li><p>code 构建界面</p>
+
+<ol>
+<li>delete main.storyboard file 与Controller</li>
+<li>create a cocoa file “RootViewController” no Xib，subClass from UIViewController</li>
+<li>set target-&gt;General-&gt;deployment Info -&gt;Main Interface = nil</li>
+<li><p>in delegate file ,change below code to load xib file</p>
+
+<pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
+{
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [[RootViewController alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+}    
+</code></pre></li>
+<li><p>in RootViewController，change the code</p>
+
+<pre><code>- (void)viewDidLoad {
+[super viewDidLoad];
+CGRect screen = [[UIScreen mainScreen] bounds];
+CGFloat width = 90;
+CGFloat height = 20;
+CGFloat topView = 150;
+UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake((screen.size.width - width)/2, topView, width, height)];
+label.text = @&quot;Hello World&quot;;
+[self.view addSubview:label];
+}
+</code></pre></li>
+<li><p>视图属性</p>
+
+<pre><code>1. frame -&gt;该视图在父视图坐标系统中的位置与大小，相对父视图
+2. bounds -&gt; 该视图在本地坐标系统中的位置与大小，相对于自己
+</code></pre></li>
+<li><p>Interface Builder (IB),可交互原型</p></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
