@@ -1,0 +1,216 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	多线程 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">多线程</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<ol>
+<li><p>线程与进程的区别</p>
+
+<ol>
+<li>一个程序至少要有一个进程，一个进程至少要有一个线程</li>
+<li>进程，资源分配的最小独立单元，由系统进行资源分配与调度</li>
+<li>线程，是进程下的一个分支，是进程的实体，是CPU调度和分配的最小单元</li>
+<li>线程是比进程更小的独立运行的基本单位，可以与同一进程的其他线程共享系统资源</li>
+<li>线程只是一个进程中不同的执行路径，线程有自己的堆栈和局部变量。</li>
+<li>一个线程死掉，基本会引起一个进程的死掉，所以多进程要比多线程程序健壮</li>
+<li>但是对于某些同时进行，并且要共享某些变量的操作，只能使用线程来操作</li>
+</ol></li>
+<li><p>多线程</p>
+
+<ol>
+<li>同步完成多项任务，CPU：多核，操作系统:多任务，应用：多操作，IOS中：并发</li>
+<li>IOS，Cocoa可以创建线程化的对象</li>
+<li>GCD(Grand Central Dispatch),系统多线程类库，C语言，多核心，Block</li>
+<li>NSOperation封装了线程的细节实现，与NSQueue一起管理多线程</li>
+<li>NSThread，控制线程执行的对象，NSThread线程之间的并发控制，可以通过NSCondition来实现</li>
+</ol></li>
+<li><p>NSCondition</p>
+
+<ol>
+<li>NSCondition 是对线程的高度抽象</li>
+<li>提供了GCD不是很容易复制的有用特性</li>
+<li>提供了任务的状态，可以方便的取消一个NSOperation的运行</li>
+<li>GCD，简单易用，节省代码，block的使用，通俗易懂，可在简单项目使用</li>
+</ol></li>
+<li><p>队列与多线程</p>
+
+<ol>
+<li><p>串行队列，队列中的任务顺序执行</p>
+
+<p><code>dispatch_queue_t q = dispatch_queue_create(&quot;&quot;,DISPATCH_QUEUE_SERIAL)</code></p>
+
+<ol>
+<li>并行队列，队列中的任务通常会并发执行</li>
+</ol>
+
+<p><code>dispatch_queue_t q = dispatch_queue_create(&quot;&quot;,DISPATCH_QUEUE_CONCURRENT)</code></p>
+
+<ol>
+<li>全局队列，系统的，可以直接使用，与并行队列类似</li>
+</ol>
+
+<p><code>dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0)</code></p>
+
+<ol>
+<li>主队列
+<code>dispatch_queue_t q = dispatch_get_main_queue()</code></li>
+</ol></li>
+<li><p>atomic与线程安全</p>
+
+<ol>
+<li>atomic属性原子性，是指属性的存取方法是线程安全的，并不能保证整个对象是线程安全的</li>
+<li>该属性的其他方法(except setter,getter)并不是线程安全的，需要用lock来保证其线程安全性</li>
+</ol></li>
+<li><p>线程的创建</p>
+
+<ol>
+<li>三种方法，GCD的dispatch，NSThread，NSOperation与NSOperationQueue</li>
+<li>主线程执行方法<q>performSelectorOnMainThread</q></li>
+<li>延迟执行代码
+“performSelector:onThread:withObject:waitUntilDone”</li>
+</ol></li>
+</ol></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>

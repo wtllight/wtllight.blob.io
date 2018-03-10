@@ -1,0 +1,551 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	基础语法 - 
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	<script src="asset/highlightjs/highlight.pack.js"></script>
+	<link href="asset/highlightjs/styles/solarized_dark.css" media="screen, projection" rel="stylesheet" type="text/css">
+<script>hljs.initHighlightingOnLoad();</script>
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+					<div class="profilepic">
+						<img src="asset/icon.jpg" style="width:160px;">
+					</div>
+					<h1><a href="index.html"></a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+							<li><a href="index.html">Home</a></li>
+						    <!-- <li><a href="all.html">Blog</a></li>-->	
+						    <li><a href="archives.html">Archives</a></li>
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+<!-- 
+			<a class="email" href="mailto:" title="Email">Email</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+			<a class="google" href="https://plus.google.com/" rel="author" title="Google+">Google+</a>
+			<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+			<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+			<a class="coderwall" href="https://coderwall.com/" title="Coderwall">Coderwall</a>
+		    <a class="stackoverflow" href="http://stackoverflow.com/users/" title="StackOverflow"></a>
+			<a class="linkedin" href="http://www.linkedin.com/in/" title="LinkedIn">LinkedIn</a>
+			<a class="pinterest" href="https://pinterest.com/" title="Pinterest">Pinterest</a>
+			<a class="delicious" href="http://delicious.com/" title="Delicious">Delicious</a>
+			<a class="pinboard" href="https://pinboard.in/u:" title="Pinboard">Pinboard</a>
+			<a class="douban" href="https://www.douban.com/people/" title="Douban">Douban</a>
+			<a class="quora" href="https://quora.com/" title="Quora">Quora</a>
+			<a class="instagram" href="https://instagram.com/" title="Instagram">Instagram</a>
+			<a class="behance" href="https://www.behance.net/" title="Behance">Behance</a>
+			<a class="facebook" href="http://www.facebook.com/" title="Facebook">Facebook</a>
+								<a class="twitter" href="http://twitter.com/" title="Twitter">Twitter</a>
+								<a class="github" href="https://github.com/" title="GitHub">GitHub</a>
+-->	
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">基础语法</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h2 id="toc_0">定义关键字</h2>
+
+<ol>
+<li><p><q>Const</q> 只读，修饰变量，指针，函数，编译阶段使用  </p>
+
+<blockquote>
+<ol>
+<li>const int a; a是一个常整型数</li>
+<li>int const a; a是一个常整型数</li>
+<li>const int* a;  a是一个指向常整型数的指针，指针可以修改</li>
+<li>int * const a; a是一个指向整型数的常指针，指针不可修改</li>
+<li>int const* const a;数与指针都不可修改</li>
+</ol>
+</blockquote></li>
+<li><p><q>#define</q> 预处理阶段进行替换   </p>
+
+<blockquote>
+<ol>
+<li>不做类型检查，仅仅展开替换</li>
+<li>不分配内存</li>
+<li>不能调试</li>
+<li>替换后，运行过程中不断占用内存</li>
+<li>可以定义一些简单的函数</li>
+<li>不能以分号结束</li>
+<li>括号(),长整形UL的使用
+<code>#define SECONDS_PER_YEAR (60*60*24*365)UL</code></li>
+<li>宏处理与嵌入操作
+<code>#define MIN(A,B) ((A &lt;= B) ? (A): (B))</code></li>
+</ol>
+</blockquote></li>
+<li><p>“valatile” 易变变量，该值的访问不从暂时寄存器备份中查找</p>
+
+<blockquote>
+<ol>
+<li>并行设备的硬件寄存器</li>
+<li>中断服务子程序中，访问非自动变量<code>Non-Automatic Variables</code></li>
+<li>多线程应用中，被几个任务共享的变量</li>
+</ol>
+</blockquote></li>
+<li><p><q>static</q>,静态变量,不同于Auto，内存只被分配一次</p>
+
+<blockquote>
+<ol>
+<li>函数体内static 变量，作用范围函数体，</li>
+<li>模块内static全局变量，作用范围该模块</li>
+<li>模块内static函数，只能模块内函数使用</li>
+<li>类中static 变量，对类的所有对象只有一份拷贝</li>
+<li>类中static 成员函数，属于整个类所有，不接受this指针，只接受static成员变量</li>
+</ol>
+</blockquote></li>
+<li><p>“#include”，<q>#import</q>,<q>@class</q></p>
+
+<blockquote>
+<ol>
+<li><q>#include</q>，“#import”效果相同，导入类中定义方法</li>
+<li>“#import”，不会引起交叉编译，确保头文件只会被导入一次</li>
+<li>“@Class” ,表明只定义了类的名称，类行为未知，h文件使用</li>
+<li>“@Class”，比<q>#import</q>高效，区别在于引起死锁问题</li>
+</ol>
+</blockquote></li>
+<li><p>“@public”，“@protected”，“@private”</p>
+
+<blockquote>
+<ol>
+<li>public 修饰变量，任意地方均可访问</li>
+<li>protected 修饰变量，本类及子类可访问</li>
+<li>private 修饰变量，只能本类访问</li>
+</ol>
+</blockquote></li>
+<li><p>id 类型</p>
+
+<blockquote>
+<ol>
+<li>id声明的对象，具有运行时的特性，即可以指向任意类型的objectve-C的对象</li>
+<li>instancetype,表示未知类型的OBJC ，明确性，模式化，一致性，返回类实例，对象clang 3.5开始</li>
+</ol>
+</blockquote></li>
+<li><p>self 与super</p>
+
+<blockquote>
+<ol>
+<li>self:当前消息的接受者</li>
+<li>super: 向父类发送消息</li>
+<li>子类拥有父类的实例与行为<code>self = [super init]</code></li>
+</ol>
+</blockquote></li>
+<li><p>“@synthesize” 与<q>dynamic</q></p>
+
+<blockquote>
+<ol>
+<li>synthesize 是系统自动生成getter与setter属性声明</li>
+<li>dynamic 是开发人员自己提供相应的属性声明</li>
+</ol>
+</blockquote></li>
+<li><p>OC数据类型</p>
+
+<blockquote>
+<ol>
+<li>NSString,NSNumber,NSArray,NSDictionary,NSData</li>
+<li>NSInteger是基本数据类型</li>
+<li>typedef 别名定义，替换</li>
+</ol>
+</blockquote></li>
+</ol>
+
+<h2 id="toc_1">属性“@Property”</h2>
+
+<ol>
+<li><p>属性关键字</p>
+
+<blockquote>
+<ol>
+<li>原子性 atomic/nonatomic,默认atomic，setter与getter线程同步</li>
+<li>读/写权限 ,readonly,readwrite</li>
+<li>内存管理，(asssign，copy，retain)，ARC内存管理,(strong，weak)=&gt;相当于(retain,assign)</li>
+<li>方法名，<code>@property (nonatomic,getter=isON) Bool on;</code>
+init开头的变量,编译器会将所有以init开头的方法当做初始化方法，<code>@property (nonatomic,strong,getter=p_initBy,setter=setP_initBy) Bool on;</code></li>
+<li>不常用的,nonnull,null_resettable,nullable</li>
+</ol>
+</blockquote></li>
+<li><p>ARC 默认的属性关键字</p>
+
+<blockquote>
+<ol>
+<li>atomic,readwrite,assign(基本数据类型),strong(对象)</li>
+<li>weak使用，ARC中可能使用循环引用，如delegate代理属性</li>
+<li>IBOutlet 控件属性一般也用weak，也可以使用strong</li>
+<li>weak,非拥有关系，OC对象，不保留新值，不释放旧值，摧毁时为nil</li>
+<li>assign非OC对象，基本数据类型</li>
+<li>weak 不需要dealloc，ARC会处理</li>
+</ol>
+</blockquote></li>
+<li><p>“@Property”本质,自动合成autosynthesis</p>
+
+<blockquote>
+<ol>
+<li>实例变量+存取方法
+<code>@property = _ivar + getter + setter</code></li>
+<li>如果是<code>@symthesize foo</code>,则生成同名成员变量
+<q>@symthesize foo = _foo</q>，则不会生成同名变量</li>
+</ol>
+</blockquote></li>
+<li><p>“@Protocol”,category使用<q>@property</q></p>
+
+<blockquote>
+<ol>
+<li>protocol 使用property只会生成setter与getter声明</li>
+<li>category使用property同样只会生成setter与getter声明，如果想要实现需要添加<code>objc_setAssociatedObject,objc_getAssociatedObject</code></li>
+</ol>
+</blockquote></li>
+<li><p><q>@Property</q>声明NSString，NSArray，NSDictionary</p>
+
+<blockquote>
+<ol>
+<li>对于这些变量的声明，经常使用copy，是为了让本对象的属性不受外界影响，因为copy传入的是一个不可变得副本(immutable)</li>
+<li>strong 指向的是一个可变对象(mutable)</li>
+</ol>
+</blockquote></li>
+<li><p><q>@Property</q>声明NSMutableString </p>
+
+<blockquote>
+<ol>
+<li>声明带有NSMutable的属性时不能使用Copy</li>
+<li>添加，删除，修改元素时，会因找不到对应方法而崩溃</li>
+<li>使用atomic属性会严重影响其性能</li>
+</ol>
+</blockquote></li>
+<li><p>“@synthesize”,<q>@dynamic</q></p>
+
+<blockquote>
+<ol>
+<li>synthesize合成,是默认的，为var=_var + setter + getter</li>
+<li>dynamic动态，setter与getter 需要由用户生成</li>
+</ol>
+</blockquote></li>
+<li><p>对内可读写，对外只可读</p>
+
+<blockquote>
+<ol>
+<li>.h文件 将属性定义为readonly</li>
+<li>.m文件，将属性重新定义为readwrite</li>
+</ol>
+</blockquote></li>
+<li><p>属性的self调用</p>
+
+<blockquote>
+<ol>
+<li>name = @<q>LiMing</q>;会直接将值赋给该变量</li>
+<li>self.name = @<q>LiMing</q>；会调用对象的setName方法。</li>
+</ol>
+</blockquote></li>
+<li><p>delegate的属性基本都是assign而不是strong</p>
+
+<blockquote>
+<ol>
+<li>循环引用时内存的释放问题，防止delegation两端产生不必要的循环引用</li>
+</ol>
+</blockquote></li>
+</ol>
+
+<h2 id="toc_2">Block</h2>
+
+<ol>
+<li><p>定义，代码块，两个结构体，实质为函数</p>
+
+<blockquote>
+<ol>
+<li>Block提供了一种可以将函数程式代码内嵌在语句中的方法</li>
+<li><code>int (^myBlock)(int) = ^(int num){return num*num}</code></li>
+<li>本质是两个结构体:<a href="file:////Users/wangsky/Demo/OBJC/main.m">Block</a>
+<code>clang -rewrite-objc /Users/wangsky/Desktop/main.m</code></li>
+<li>block的定义其实是创建了一个函数，block内使用外部变量是值传递，不能修改变量的值，地址传递需要在声明时加__block,<code>__block int a = 10;</code></li>
+</ol>
+</blockquote></li>
+<li><p>注意点,对象是否已被销毁</p>
+
+<blockquote>
+<ol>
+<li>__weak typeof(self) weakSelf = self;</li>
+<li>__strong typeof(self) strongSelf = weakSelf;</li>
+<li>循环引用应该注意强引用与弱引用的使用</li>
+</ol>
+</blockquote></li>
+<li><p>Delegate 与 Block</p>
+
+<blockquote>
+<ol>
+<li>Delegate回调函数，更面向过程，Block 回调更面向结果</li>
+<li>在执行不同步骤时被通知，则使用代理，如果是成功或失败则是block</li>
+<li>Block 更适合于状态无关的操作，如被告知结果</li>
+<li>代理适用于单例模式</li>
+</ol>
+</blockquote></li>
+<li><p>系统中的block API</p>
+
+<blockquote>
+<ol>
+<li>所谓引用循环是指双向的强引用，单向的强引用则没有问题</li>
+<li>Block一般用来表示，简化一小段的程式码，该程式码同步执行，执行某一工作完成时的回传呼叫<q>CallBack</q></li>
+<li>将程式代码，作为函数参数传入函数中，更方便存取区域变数</li>
+<li>可以当做内部函数来使用，同样可以作为函数参数来使用，同样也可以作为方法的参数，使用返回值，另外也可以作为属性
+##CateGory</li>
+</ol>
+</blockquote></li>
+<li><p>Category，Extensions与继承</p>
+
+<blockquote>
+<ol>
+<li>两者皆可添加方法，后者可以添加属性，Extensions可以认为是一个私有的category</li>
+<li>Category可以在不获悉，不改变原来代码基础上往里面添加新的方法，只能添加不能修改，删除，如果方法有冲突，分类将覆盖原来的方法</li>
+<li>继承可以增加，修改或者删除方法，也可以增加属性，</li>
+</ol>
+</blockquote></li>
+<li><p>Category无法如子类一样调用父类方法实现函数。</p></li>
+<li><p>一般情况下使用Category去重写类比较好，因其不会对其他类与原有类造成影响</p></li>
+<li><p>Extension是Category的一个特例，其可以扩展属性，成员变量与方法。</p></li>
+<li><p>使用objc_getAssociatedObject来访问，生成和关联对象</p></li>
+</ol>
+
+<h2 id="toc_3">KVC/KVO</h2>
+
+<ol>
+<li><p>KVC/KVO的概念</p>
+
+<blockquote>
+<ol>
+<li>KVC , NSKeyValueCoding,一个非正式的Protocol,用来间接访问对象的属性</li>
+<li>KVO是基于KVC实现的关键技术之一</li>
+<li>Key,KeyPath,Value</li>
+<li><code>[self.persion addObserver:self forKeyPath:@&quot;name&quot; options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOLd context:@&quot;Persion Name&quot;];</code></li>
+<li>自动触发，在注册之前设置一个初始值，注册之后设置一个不一样的初始值。</li>
+<li>实现两个方法即可实现手动触发<q>willChangeValueForKey</q>,<q>didChangeValueForKey</q>.</li>
+<li>实例变量<u>foo,它的setValue:forKey，的key值foo或</u>foo均可</li>
+<li>KVC中的KeyPath中的集合运算符，必须用在集合对象上，或普通对象的集合属性上</li>
+<li>KVC与KVO的keyPath不一定必须是attribute，也可以是实例变量</li>
+<li>关闭KVO的自动实现，进入自定义的KVO实现。Method Swizzling</li>
+</ol>
+</blockquote></li>
+</ol>
+
+<h2 id="toc_4">Protocal/Delegate</h2>
+
+<ol>
+<li><p>Delegate 的作用</p>
+
+<blockquote>
+<ol>
+<li>代理的作用是改变或传递控制链，允许一个类在某些特定的时刻通知到其他类，而不需要获取那些类的指针，类似于回调监听机制</li>
+<li><code>@Protocal</code>,是定义协议的关键字，协议也可以继承父类协议，其方法有<q>@required</q>与<q>optional</q></li>
+<li>OC与Java相同没有继承，可以使用委托代理Protocal来实现</li>
+</ol>
+</blockquote></li>
+<li><p>Delegate与Protocal</p>
+
+<blockquote>
+<ol>
+<li>Protocal是协议，只有.h文件，甚至可以不独立文件</li>
+<li>Protocal使用时，需要遵守协议，在本类中实现方法即可</li>
+<li>Protocal声明了，可以被任何类实现的方法</li>
+<li>Protocal不是类，它定义了一系列其他对象可以实现的接口</li>
+<li>如果在某个类中实现了协议中的某个方法，也就是这个类实现了那个协议</li>
+<li>Delegate是一种模式，他的作用是委托别人去做事</li>
+</ol>
+</blockquote></li>
+</ol>
+
+<h2 id="toc_5">Notification</h2>
+
+<ol>
+<li><p>Notification 概念</p>
+
+<blockquote>
+<ol>
+<li>观察者模式，添加Notification到Notification Center</li>
+<li>可以使用NotificationQueue 的方式来安排观察者的反应顺序</li>
+<li>不需要时可以在ViewDidUpload跟dealloc中注销</li>
+</ol>
+</blockquote></li>
+<li><p>NSNotification与KVO</p>
+
+<blockquote>
+<ol>
+<li>两者都是观察者模式，不同的是KVO是被观察者直接发送消息给观察者，是对象之间的直接交互</li>
+<li>NSNotification是被观察者发送消息到通知中心，再由通知中心发出通知给观察者, 是对象的间接交互</li>
+<li>NSNotication 需要观察者中心，观察者与被观察者，可以一无所知完全解耦</li>
+<li>Notification可以应用于任何时间，任何对象，观察者可以有多个</li>
+</ol>
+</blockquote></li>
+<li><p>NSNotification</p>
+
+<blockquote>
+<p>A. 使用步骤   </p>
+
+<blockquote>
+<ol>
+<li>注册观察者</li>
+<li>给通知中心发送一个消息</li>
+<li>清楚观察者</li>
+</ol>
+</blockquote>
+
+<p>B. 应用场景</p>
+
+<blockquote>
+<ol>
+<li>控制器与一个或多个任意对象进行通信(监控)</li>
+<li>UIDevice通知</li>
+<li>键盘通知</li>
+</ol>
+</blockquote>
+</blockquote></li>
+<li><p>KVO</p>
+
+<blockquote>
+<p>A.  概念</p>
+
+<blockquote>
+<ol>
+<li>Key-Value Observing,是Foundation框架提供的一个机制</li>
+<li>使用KVO可以方便的对指定对象的某个属性进行观察，当属性发生变化时进行通知</li>
+</ol>
+</blockquote>
+
+<p>B. 实现步骤</p>
+
+<blockquote>
+<ol>
+<li>由被观察对象调用方法，添加观察者</li>
+<li>被观察者属性发生变化，调用方法</li>
+<li>清楚观察者身份</li>
+</ol>
+</blockquote>
+</blockquote></li>
+<li><p>Notification Remove</p>
+
+<ol>
+<li>观察者必须清除，因为注册通知的类被销毁以后又发送了通知，由于向野指针发送了消息，程序会崩溃</li>
+<li>自动remove，通过自释放机制，由动态属性将remove转移给第三者，解除耦合，达到自动remove的目的
+## 自释放</li>
+</ol></li>
+<li><p>内容</p>
+
+<blockquote>
+<ol>
+<li>对象内存的回收  =&gt;Release ，ARC , AutoRelease</li>
+<li>对象解耦</li>
+<li>附属事件的清理</li>
+<li>定时器的自我停止 =&gt; invalidate , MSWeakerTimer,</li>
+<li>KVO对象的监听移除 =&gt; FBKVOController,动态属性绑定</li>
+<li>Notification监听的移除 =&gt; Swizzing</li>
+<li>HttpRequest,ListSql的释放等</li>
+</ol>
+</blockquote></li>
+<li><p>方法</p>
+
+<blockquote>
+<ol>
+<li>动态属性的自释放</li>
+<li><q>@Property</q>的自释放</li>
+<li>swizzing dealloc的自释放</li>
+</ol>
+</blockquote></li>
+</ol>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
